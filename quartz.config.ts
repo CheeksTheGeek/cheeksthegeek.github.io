@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "Chaitanya's Blog",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "chait.me",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: false,
@@ -30,28 +30,28 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#EFE0EF", // Foreground
+          lightgray: "#e5e0fF", // Bright Blue
+          gray: "#A66CAF", // Bright Cyan
+          darkgray: "#6272A4", // Bright Green
+          dark: "#BF4FBF", // Bright Black
+          secondary: "#E0787C", // Bright Purple
+          tertiary: "#FF555588", // Bright Yellow
+          highlight: "rgba(189, 147, 249, 0.15)", // Blue Highlight with transparency
+          textHighlight: "#FFB86C88", // Yellow-Orange Highlight
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#282A36", // Background
+          lightgray: "#44475A", // Selection Background
+          gray: "#6272A4", // Bright Black
+          darkgray: "#F8F8F2", // Foreground
+          dark: "#BFEFEF", // Bright White
+          secondary: "#BD93F9", // Blue
+          tertiary: "#FFB86C", // Yellow-Orange
+          highlight: "rgba(255, 121, 198, 0.15)", // Purple Highlight with transparency
+          textHighlight: "#FF555588", // Red Highlight
         },
-      },
+      }      
     },
   },
   plugins: {
