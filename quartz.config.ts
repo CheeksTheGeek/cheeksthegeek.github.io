@@ -30,26 +30,26 @@ const config: QuartzConfig = {
       },
       colors: {
         lightMode: {
-          light: "#EFE0EF", // Foreground
-          lightgray: "#e5e0fF", // Bright Blue
-          gray: "#A66CAF", // Bright Cyan
-          darkgray: "#6272A4", // Bright Green
-          dark: "#BF4FBF", // Bright Black
-          secondary: "#E0787C", // Bright Purple
-          tertiary: "#FF555588", // Bright Yellow
-          highlight: "rgba(189, 147, 249, 0.15)", // Blue Highlight with transparency
-          textHighlight: "#FFB86C88", // Yellow-Orange Highlight
+          light: "#EFE0EF", 
+          lightgray: "#e5e0fF", 
+          gray: "#A66CAF", 
+          darkgray: "#6272A4", 
+          dark: "#BF4FBF", 
+          secondary: "#E0787C", 
+          tertiary: "#FF555588", 
+          highlight: "rgba(189, 147, 249, 0.15)", 
+          textHighlight: "#FFB86C88", 
         },
         darkMode: {
-          light: "#282A36", // Background
-          lightgray: "#44475A", // Selection Background
-          gray: "#6272A4", // Bright Black
-          darkgray: "#F8F8F2", // Foreground
-          dark: "#BFEFEF", // Bright White
-          secondary: "#BD93F9", // Blue
-          tertiary: "#FFB86C", // Yellow-Orange
-          highlight: "rgba(255, 121, 198, 0.15)", // Purple Highlight with transparency
-          textHighlight: "#FF555588", // Red Highlight
+          light: "#282A36", 
+          lightgray: "#44475A", 
+          gray: "#6272A4", 
+          darkgray: "#F8F8F2", 
+          dark: "#BFEFEF", 
+          secondary: "#BD93F9", 
+          tertiary: "#FFB86C", 
+          highlight: "rgba(255, 121, 198, 0.15)", 
+          textHighlight: "#FF555588", 
         },
       }      
     },
