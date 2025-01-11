@@ -123,7 +123,7 @@ export const TikzJax: QuartzTransformerPlugin = (opts?: Options) => {
         js: [
           {
             // load TikzJax from the official CDN
-            src: "https://tikzjax.com/v1/tikzjax.js",
+            src: "https://chait.me/tikzjax.js",
             loadTime: "afterDOMReady",
             contentType: "external",
           },
