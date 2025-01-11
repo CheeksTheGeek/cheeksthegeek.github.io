@@ -117,13 +117,13 @@ export const TikzJax: QuartzTransformerPlugin = (opts?: Options) => {
         css: [
           {
             // includes TikZ fonts so the math looks good
-            content: "https://tikzjax.com/v1/fonts.css",
+            content: "https://chait.me/static/fonts.css",
           },
         ],
         js: [
           {
             // load TikzJax from the official CDN
-            src: "https://chait.me/tikzjax.js",
+            src: "https://chait.me/static/tikzjax.js",
             loadTime: "afterDOMReady",
             contentType: "external",
           },
