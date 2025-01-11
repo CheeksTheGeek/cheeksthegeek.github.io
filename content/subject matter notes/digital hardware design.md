@@ -1135,7 +1135,11 @@ Analyzing the impact of different instruction sets on performance can reveal the
 - **ADD:** 15% usage, CPI = 0.8
 - **MUL:** 5% usage, CPI = 1.2
 - **Other:** 80% usage, CPI = 1.0 
-$$\text{CPI}_{\text{Average}} = 0.15 \times 0.8 + 0.05 \times 1.2 + 0.8 \times 1.0 = 0.98$$
+
+$$
+\text{CPI}_{\text{Average}} = 0.15 \times 0.8 + 0.05 \times 1.2 + 0.8 \times 1.0 = 0.98
+$$
+
 ### Introducing a MAC Instruction:
 - Replaces one MUL and one ADD.
 - Expected to replace half of the MUL operations.
@@ -1143,7 +1147,19 @@ $$\text{CPI}_{\text{Average}} = 0.15 \times 0.8 + 0.05 \times 1.2 + 0.8 \times 1
   - No change.
   - Add MAC with CPI = MUL, clock period +20%.
   - Add MAC with CPI = 1.5 × MUL, same clock period.
-$$\text{Cycles}_1 = 15 \times 0.8 + 5 \times 1.2 + 80 \times 1.0 = 98$$$$\text{Cycles}_2 = (0+2.5) \times 1.2 + (15-2.5) \times 0.8 + (5-2.5) \times 1.2 + 80 \times 1.0 = 96$$$$\text{Cycles}_3 = (0+2.5) \times 1.8 + (15-2.5) \times 0.8 + (5-2.5) \times 1.2 + 80 \times 1.0 = 97.5$$
+
+$$
+\text{Cycles}_1 = 15 \times 0.8 + 5 \times 1.2 + 80 \times 1.0 = 98
+$$
+
+$$
+\text{Cycles}_2 = (0+2.5) \times 1.2 + (15-2.5) \times 0.8 + (5-2.5) \times 1.2 + 80 \times 1.0 = 96
+$$
+
+$$
+\text{Cycles}_3 = (0+2.5) \times 1.8 + (15-2.5) \times 0.8 + (5-2.5) \times 1.2 + 80 \times 1.0 = 97.5
+$$
+
 Option 3 offers the highest performance.
 ## Introducing a MAC Instruction
 ### Options:
@@ -1154,7 +1170,11 @@ Option 3 offers the highest performance.
 - Calculate number of clock cycles and performance for each option.
 - Determine best option based on performance metrics.
 ## Time to Market and Performance
-### Exponential Growth Model: $$P(t) = P(0) \times n^{(t/k)}$$where $P$ increases by a factor of $n$ every $k$ units of time.
+### Exponential Growth Model: 
+$$
+P(t) = P(0) \times n^{(t/k)}
+$$
+where $P$ increases by a factor of $n$ every $k$ units of time.
 ### Example:
 - Performance doubles every 18 months.
 - Optimization improves performance by 7%.
@@ -1475,10 +1495,26 @@ Power Aware Designs: These are designs that will have the functionality to dynam
 > The activity factor is a crucial concept in power-aware design, particularly in the context of dynamic power consumption. It measures how frequently a signal changes its value within a circuit and is a key determinant of the power consumed by switching activities. 
 > #### Definition of Activity Factor
 > The activity factor ($\alpha$) is defined as the average number of transitions per clock cycle for a signal. It is a measure of how often the signal toggles between logic levels (0 and 1).
-> $$\alpha = \frac{\text{Number of transitions}}{\text{Total number of clock cycles}}$$
+> 
+$$
+\alpha = \frac{\text{Number of transitions}}{\text{Total number of clock cycles}}
+$$
+
 > #### Importance of Activity Factor
 > - **Dynamic Power Consumption**: The dynamic power consumed by a circuit is directly proportional to the activity factor. Higher activity factors lead to higher dynamic power consumption.
->   $$P_{switching} =0.5\cdot \alpha \cdot C \cdot V^2 \cdot f$$ $$P_{short circuit}=\alpha \cdot f \cdot t_{short} \cdot I_{short} \cdot V_{supply}$$  $$P_{dynamic}=P_{switching} + P_{short circuit}$$
+>   
+$$
+P_{switching} =0.5\cdot \alpha \cdot C \cdot V^2 \cdot f
+$$
+ 
+$$
+P_{short circuit}=\alpha \cdot f \cdot t_{short} \cdot I_{short} \cdot V_{supply}
+$$
+  
+$$
+P_{dynamic}=P_{switching} + P_{short circuit}
+$$
+
 >   Where:
 >   - $P_{dynamic}$ is the dynamic power consumption.
 >   - $\alpha$ is the activity factor.
@@ -1499,16 +1535,40 @@ Power Aware Designs: These are designs that will have the functionality to dynam
 > 4. **Power Gating**: Shutting down entire sections of the circuit when not in use can effectively reduce the activity factor to zero for those sections.
 > 5. **Redundant Logic**: Introducing redundant logic to stabilize signal transitions and avoid glitches.
 > #### Practical Example of Activity Factor Calculation
-> Consider a signal that transitions 1000 times in a period of 2000 clock cycles. The activity factor for this signal would be: $$\alpha = \frac{1000}{2000} = 0.5$$This means that on average, the signal changes its value once every two clock cycles.
+> Consider a signal that transitions 1000 times in a period of 2000 clock cycles. The activity factor for this signal would be: 
+$$
+\alpha = \frac{1000}{2000} = 0.5
+$$
+This means that on average, the signal changes its value once every two clock cycles.
 > #### Impact on Power Consumption
-> If we consider a circuit with a capacitance of 10 pF, a supply voltage of 1.2 V, and a frequency of 1 GHz, the dynamic power consumption can be calculated as: $$P_{dynamic} = \alpha \cdot C \cdot V^2 \cdot f$$$$P_{dynamic} = 0.5 \cdot 10 \times 10^{-12} \cdot (1.2)^2 \cdot 10^9$$$$P_{dynamic} = 0.5 \cdot 10 \cdot 1.44 \cdot 10^{-3}$$$$P_{dynamic} = 7.2 \text{ mW}$$By reducing the activity factor, significant power savings can be achieved.
+> If we consider a circuit with a capacitance of 10 pF, a supply voltage of 1.2 V, and a frequency of 1 GHz, the dynamic power consumption can be calculated as: 
+$$
+P_{dynamic} = \alpha \cdot C \cdot V^2 \cdot f
+$$
+
+$$
+P_{dynamic} = 0.5 \cdot 10 \times 10^{-12} \cdot (1.2)^2 \cdot 10^9
+$$
+
+$$
+P_{dynamic} = 0.5 \cdot 10 \cdot 1.44 \cdot 10^{-3}
+$$
+
+$$
+P_{dynamic} = 7.2 \text{ mW}
+$$
+By reducing the activity factor, significant power savings can be achieved.
 > #### Conclusion
 > The activity factor is a fundamental parameter in dynamic power consumption, and its management is vital for designing power-efficient circuits. By employing techniques to minimize unnecessary transitions and glitches, designers can optimize the power consumption of digital systems, enhancing their overall efficiency and performance.
 
 ### Static Power:
 - Leakage power: Current leakage through transistors.
 	- Increases with temperature and lower threshold voltage.
-### Total Power: $$P_{\text{Total}} = P_{\text{Dynamic}} + P_{\text{Static}}$$
+### Total Power: 
+$$
+P_{\text{Total}} = P_{\text{Dynamic}} + P_{\text{Static}}
+$$
+
 ## Power Reduction Techniques
 ### Analog Techniques:
 1. **Dual VSupply:** High and low supply voltages.
@@ -1632,7 +1692,11 @@ Controlling inputs can simplify fault detection by collapsing multiple faults in
 Detecting a fault at a gate output also detects all input faults in the collapsible set.
 ## Fault Coverage
 Fault coverage is the percentage of detectable faults identified by a set of test vectors. It can be defined based on detectable faults or all possible faults.
-### Formula: $$\text{Fault Coverage} = \frac{\text{Number of Detected Faults}}{\text{Total Number of Detectable Faults}} \times 100\%$$
+### Formula: 
+$$
+\text{Fault Coverage} = \frac{\text{Number of Detected Faults}}{\text{Total Number of Detectable Faults}} \times 100\%
+$$
+
 ## Testing Chips
 ### Scan Chain Testing:
 - Uses existing registers to create scan chains for loading test vectors and recording outputs.

@@ -1470,7 +1470,11 @@ void *allocate(int size) {
 - Only power-of-two-sized blocks allowed.
 - Rounding up to the next highest power of 2 likely causes fragmentation.
 ## Exercise
-### Given the following bit array representation of a buddy system:** $$[1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0]$$
+### Given the following bit array representation of a buddy system:** 
+$$
+[1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0]
+$$
+
 ### Questions:
 1. Which blocks are fully allocated? (Answer the corresponding array index)
 2. Which blocks are free?
@@ -2203,7 +2207,11 @@ J3   | 3
 - Assign higher priorities to tasks with shorter periods.
 - Optimal for static schedulers.
 ### Schedulability Test
-- For n periodic tasks with execution time $e_i$ and period $p_i$, RM is guaranteed to produce a feasible schedule if: $$\sum_{i=1}^{n} \frac{e_i}{p_i} \leq n (2^{1/n} - 1)$$
+- For n periodic tasks with execution time $e_i$ and period $p_i$, RM is guaranteed to produce a feasible schedule if: 
+$$
+\sum_{i=1}^{n} \frac{e_i}{p_i} \leq n (2^{1/n} - 1)
+$$
+
 > [!ChatGPT]
 > The Rate Monotonic Scheduler (RMS) is a widely used real-time scheduling algorithm designed for periodic tasks. It's based on the principle that tasks with shorter periods (i.e., tasks that need to run more frequently) are given higher priority. This algorithm is optimal for preemptive, fixed-priority scheduling of periodic tasks, meaning that if any set of tasks can be scheduled using fixed priorities, then RMS will successfully schedule them.
 > Here's a detailed breakdown of how the Rate Monotonic Scheduler works:
@@ -2220,7 +2228,11 @@ J3   | 3
 > 	- **CPU Allocation**: The CPU is always allocated to the highest-priority task that is ready to run.
 > 	- **Task Completion**: Once a task finishes its execution within its period, it yields the CPU, allowing other tasks to execute.
 > - ### Schedulability Test
->      - To determine if a set of tasks can be scheduled using RMS, a **schedulability test** can be applied. For a set of `n` tasks, RMS guarantees that the tasks will meet their deadlines if: $$U = \sum_{i=1}^{n} \frac{C_i}{T_i} \leq n(2^{1/n} - 1)$$
+>      - To determine if a set of tasks can be scheduled using RMS, a **schedulability test** can be applied. For a set of `n` tasks, RMS guarantees that the tasks will meet their deadlines if: 
+$$
+U = \sum_{i=1}^{n} \frac{C_i}{T_i} \leq n(2^{1/n} - 1)
+$$
+
 >           where:
 >           - $U$ is the total CPU utilization.
 >           - $C_i$ is the execution time (WCET) of task $i$.
@@ -2260,7 +2272,11 @@ J3   | 3
 - Always schedule the active task with the earliest deadline.
 - Optimal for dynamic online schedulers.
 ### Schedulability Test
-- For n periodic tasks with execution time $e_i$ and period $p_i$, EDF is guaranteed to produce a feasible schedule if: $$ \sum_{i=1}^{n} \frac{e_i}{p_i} \leq 1$$
+- For n periodic tasks with execution time $e_i$ and period $p_i$, EDF is guaranteed to produce a feasible schedule if: 
+$$
+ \sum_{i=1}^{n} \frac{e_i}{p_i} \leq 1
+$$
+
 ## Overloaded System under EDF
 ### Domino Effect
 - EDF may become suboptimal in overloaded systems.
@@ -2300,7 +2316,11 @@ J3   | 3
 - Schedules periodic tasks and TBS based on EDF.
 - Aperiodic tasks are assigned deadlines to maintain utilization within the server's bandwidth.
 #### Deadline Assignment
-- For aperiodic task $T_i$ with computation time $C_i$ arriving at time $a_i$, the deadline $d_i$ is assigned as: $$d_i = \max(d_{i-1}, a_i) + \frac{C_i}{U_{TBS}}$$
+- For aperiodic task $T_i$ with computation time $C_i$ arriving at time $a_i$, the deadline $d_i$ is assigned as: 
+$$
+d_i = \max(d_{i-1}, a_i) + \frac{C_i}{U_{TBS}}
+$$
+
 > [!ChatGPT] Deeper Explanation of Periodic-Aperiodic Mixed Scheduling Using Servers
 > ### 1. Polling Server (PS)
 > The Polling Server is a periodic task that executes aperiodic tasks. It’s treated just like any other periodic task by the scheduler, typically using Rate Monotonic Scheduling (RMS).
@@ -2327,7 +2347,11 @@ J3   | 3
 > #### Operation:
 > - **EDF Scheduling:** The TBS is scheduled along with periodic tasks using EDF. This means it schedules tasks based on deadlines, ensuring that tasks with the earliest deadlines are executed first.
 > - **Deadline Assignment:** When an aperiodic task arrives, the TBS assigns it a deadline to ensure that the overall system utilization remains within the specified bandwidth (CPU utilization limit).
->   The deadline $d_i$ for an aperiodic task $T_i$ with computation time $C_i$, arriving at time $a_i$, is calculated as: $$d_i = \max(d_{i-1}, a_i) + \frac{C_i}{U_{TBS}}$$
+>   The deadline $d_i$ for an aperiodic task $T_i$ with computation time $C_i$, arriving at time $a_i$, is calculated as: 
+$$
+d_i = \max(d_{i-1}, a_i) + \frac{C_i}{U_{TBS}}
+$$
+
 >   where $U_{TBS}$ is the server's bandwidth, which is a fraction of the CPU's capacity reserved for aperiodic tasks.
 > #### Advantages:
 > - **Optimal Utilization:** TBS ensures that the system is fully utilized while still meeting deadlines, as it dynamically adjusts to the arrival of tasks.
