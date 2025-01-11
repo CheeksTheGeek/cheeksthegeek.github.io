@@ -141,7 +141,7 @@ Pipeline depth is the number of stages in the pipeline. Deeper pipelines can inc
 ## Verilog Design Examples
 ### Four-Stage Pipeline Example:
 1. **Core Design:**
-    ```verilog
+```verilog
 module pipe1(
     input [7:0] c, b, a, x,
     input rst, clk,
@@ -223,7 +223,7 @@ endmodule
 >    // Stage 4
 >    y <= y2 + c_r3;
 2. **Testbench:**
-   ```verilog
+```verilog
    `timescale 1ns / 1ps
 
    module tbpipe1;
@@ -249,10 +249,10 @@ endmodule
            #100 $finish;    
        end    
    endmodule
-   ```
+```
 ### Two-Stage Pipeline Example:
 1. **Core Design:**
-   ```verilog
+```verilog
    // Stage 0
    c_r <= c;
    b_r <= b;
@@ -266,9 +266,9 @@ endmodule
 
    // Stage 2
    y <= c_r1 + (y1 * x_r1);
-   ```
+```
 2. **Testbench:**
-   ```verilog
+```verilog
    `timescale 1ns / 1ps
 
    module tbpipe2;
@@ -294,7 +294,7 @@ endmodule
            #100 $finish;    
        end    
    endmodule
-   ```
+```
 ### Simulation Outputs:
 The simulation demonstrates the timing and output of the pipeline, showing how results are produced at different stages and how the pipeline enhances throughput compared to non-pipelined designs.
 - **4-Stage Pipeline:**
@@ -312,7 +312,7 @@ Implementing valid bits to track the flow of data and manage stalls efficiently:
 - **Handshaking Signals:** Valid and ready signals to manage flow.
 ### Verilog Design with Bubble and Stall Support:
 1. **Core Design:**
-    ```verilog
+```verilog
 module pipe3(
     input [7:0] c, b, a, x,
     input valid_in, rst, clk, ena,
@@ -382,7 +382,7 @@ endmodule
 ```
 
 2. **Testbench:**
-    ```verilog
+```verilog
     `timescale 1ns / 1ps
 
     module tbpipe3;
@@ -413,7 +413,7 @@ endmodule
             #100 $finish;    
         end    
     endmodule
-    ```
+```
 
 ### Simulation Outputs:
 - The simulation output for the revised 4-stage pipeline includes tracking valid data and managing stalls and bubbles effectively, ensuring robust performance under various conditions.

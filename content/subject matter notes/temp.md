@@ -6,7 +6,7 @@ For instance, consider a sample space $S$ with outcomes $e_1, e_2, e_3, \ldots$.
 ![[Pasted image 20240630201626.png|Random Processes]]
 
 
-#### Interpretations
+#### Interpretations 
 A random process $X(t,e)$ can be interpreted in various ways:
 - **Family of deterministic functions:** Here, $t$ and $e$ are variables. $X(t,e) = \{x(t,e_i)|e_i \in S\}$.
 - **Random variable at $t = t_0$:** $X = X(t_0,e)$, where $e$ varies depending on the outcome of a particular trial.
@@ -189,7 +189,7 @@ For a WSS random signal, its autocorrelation function and its power spectral den
 $$P = \int_{-\infty}^{\infty} S_X(f) \, df = R_X(0)$$
 #### Response of LTI System to Random Signal Input
 For an LTI system, the input-output relation is given by: $$y(t) = x(t) \otimes h(t) = \int_{-\infty}^{\infty} x(t - \tau) h(\tau) \, d\tau$$with $H(f) = F[h(t)] = \int_{-\infty}^{\infty} h(t) e^{-j2\pi f t} \, dt$ (Fourier Transform).
-  ```mermaid
+```mermaid
 flowchart LR
 	START:::hidden -->|"x(t)<br><br>"| A["LTI<br> h(t)↔H(f)"] -->|"y(t)<br><br>"| END:::hidden
 	classDef hidden display: none;
@@ -411,7 +411,7 @@ At the output, the mean and average power are: $$m_Y(t) = m_N(t) \otimes h(t) = 
    - Wiener-Khintchine relation: $R_X(\tau) \leftrightarrow S_X(f)$
    - Power: $P = \int_{-\infty}^{\infty} S_X(f) \, df = R_X(0)$
 3. **Response of LTI System**:
-  ```mermaid
+```mermaid
 flowchart LR
 	START:::hidden -->|"X(t)<br>WSS"| A["LTI<br> h(t)↔H(f)"] -->|"Y(t)<br>WSS"| END:::hidden
     classDef hidden display: none;
