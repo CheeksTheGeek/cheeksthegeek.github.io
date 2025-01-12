@@ -6,6 +6,7 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
+    Component.MobileOnly(Component.RecentNotes()),
     Component.Comments({
       provider: 'giscus',
       options: {
